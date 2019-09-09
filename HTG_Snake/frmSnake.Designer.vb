@@ -117,7 +117,6 @@ Partial Class frmSnake
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Black
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Image = Global.HTG_Snake.My.Resources.Resources.fff
         Me.PictureBox2.Location = New System.Drawing.Point(77, 340)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(596, 629)
