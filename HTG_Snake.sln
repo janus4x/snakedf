@@ -1,8 +1,9 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "snakedf", snakedf\snakedf.vbproj", "{0FF77B78-E1E4-4249-BD21-6846A4B89529}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HTG_Snake", "HTG_Snake\HTG_Snake.vbproj", "{0FF77B78-E1E4-4249-BD21-6846A4B89529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

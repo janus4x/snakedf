@@ -161,8 +161,10 @@ Public Class frmSnake
 
         Dim rnd As New Random(Now.Second)
 
-        Dim intScreenWidth As Integer = ((ClientRectangle.Width \ intWidth) - 2) * intWidth
-        Dim intScreenHeight As Integer = ((ClientRectangle.Height \ intWidth) - 2) * intWidth
+        '       Dim intScreenWidth As Integer = ((ClientRectangle.Width \ intWidth) - 2) * intWidth
+        '        Dim intScreenHeight As Integer = ((ClientRectangle.Height \ intWidth) - 2) * intWidth
+        Dim intScreenWidth As Integer = ((PictureBox1.Width \ intWidth) + 1) * intWidth
+        Dim intScreenHeight As Integer = ((PictureBox1.Height \ intWidth) - 1) * intWidth
 
         Dim intX As Integer = rnd.Next(0, intScreenWidth)
         Dim intY As Integer = rnd.Next(0, intScreenHeight)
@@ -181,6 +183,10 @@ Public Class frmSnake
         lblMessage.Visible = False
         blnMoving = True
         tmrGame.Enabled = True
+        Timer1.Enabled = False
+        PictureBox1.Visible = False
+        PictureBox2.Visible = False
+        lblMessage.Visible = False
 
     End Sub
 
@@ -231,6 +237,18 @@ Public Class frmSnake
 
     End Sub
 
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If PictureBox1.Visible = False Then
+            PictureBox1.Visible = True
+            lblMessage.Text = "ЖАМКАЙ СТАРТ"
+        Else
+            PictureBox1.Visible = False
+
+            lblMessage.Text = ""
+        End If
+
+    End Sub
+
     Private Sub Form1_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
 
         Select Case e.KeyCode
@@ -238,6 +256,7 @@ Public Class frmSnake
             Case Keys.Enter
 
                 HideMessage()
+
 
             Case Keys.Escape
 

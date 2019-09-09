@@ -63,9 +63,40 @@ Namespace My.Resources
         '''<summary>
         '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property fff() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("fff", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property kisspng_fire_flame_stock_photography_golden_ring_of_fire_5a9a83fdb11b98_7760826315200757737255() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("kisspng-fire-flame-stock-photography-golden-ring-of-fire-5a9a83fdb11b98.776082631"& _ 
+                        "5200757737255", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Аркадный_автомат_ФОН() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Аркадный автомат ФОН", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property змейка() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("змейка", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

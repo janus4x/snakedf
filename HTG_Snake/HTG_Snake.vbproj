@@ -107,14 +107,12 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\snakedf\frmSnake.vb">
+    <Compile Include="frmSnake.vb">
       <SubType>Form</SubType>
-      <Link>frmSnake.vb</Link>
     </Compile>
-    <Compile Include="..\..\snakedf\frmSnake.Designer.vb">
+    <Compile Include="frmSnake.Designer.vb">
       <DependentUpon>frmSnake.vb</DependentUpon>
       <SubType>Form</SubType>
-      <Link>frmSnake.Designer.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -136,9 +134,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\snakedf\frmSnake.resx">
+    <EmbeddedResource Include="frmSnake.resx">
       <DependentUpon>frmSnake.vb</DependentUpon>
-      <Link>frmSnake.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -171,6 +168,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\фон.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\змейка.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-fire-flame-stock-photography-golden-ring-of-fire-5a9a83fdb11b98.7760826315200757737255.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fff.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
