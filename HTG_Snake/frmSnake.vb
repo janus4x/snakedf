@@ -57,7 +57,6 @@ Public Class frmSnake
             Dim bf As New BinaryFormatter
             bf.Serialize(fstream, arr)
         End Using
-        frmEndGame.Show()
         tmrGame.Stop()
 
     End Sub
