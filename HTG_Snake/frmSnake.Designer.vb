@@ -32,6 +32,7 @@ Partial Class frmSnake
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.picGame, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.toppanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,6 +125,11 @@ Partial Class frmSnake
         Me.PictureBox2.TabIndex = 11
         Me.PictureBox2.TabStop = False
         '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 5800
+        '
         'frmSnake
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -156,4 +162,5 @@ Partial Class frmSnake
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Timer2 As Timer
 End Class

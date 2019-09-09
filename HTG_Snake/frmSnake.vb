@@ -2,7 +2,7 @@
 Imports System.Runtime.Serialization.Formatters.Binary
 
 Public Class frmSnake
-    Public u, d, l, r As Boolean
+    Public u, d, l, r, playstartsound As Boolean
     <Serializable>
     Structure Score_table
         Dim Score As Integer
@@ -22,10 +22,25 @@ Public Class frmSnake
     Private rectFood As Rectangle
 
     Private intScore As Integer
-    Private Declare Function sndPlaySound Lib "winmm.dll" Alias "sndPlaySoundA" _
-(ByVal lpszName As String, ByVal dwFlags As Long) As Long
-    Const SND_SYNC = &H0
+    Private Declare Function PlaySound Lib "winmm.dll" Alias "PlaySoundA" (ByVal lpszName As String, ByVal hModule As Long, ByVal dwFlags As Long) As Long
 
+    Const SND_ALIAS = &H10000       ' Воспроизведение звуков Windows,определенных в WIN.INI или в реестре (напр. SystemStart, Asterisk, и т.д.).
+    Const SND_ASYNC = &H1           ' Асинхронное воспроизведение.
+    Const SND_FILENAME = &H20000    ' Запуск указанного файла.
+    Const SND_LOOP = &H8            ' Циклическое воспроизведение до следующего вызова sndPlaySound lpszSoundName = "". Можно также использовать SND_ASYNC.
+    Const SND_NODEFAULT = &H2       ' Не запускать звук по умолчанию Windows, если указанный звук не может быть найден.
+    Const SND_NOSTOP = &H10         ' Не прекращать воспроизведение любого запущенного звука.
+    Const SND_NOWAIT = &H2000       ' Не ждать,если драйвер занят.
+    Const SND_SYNC = &H0            ' Синхронное воспроизведение(значение по умолчанию). Ждать, пока звук не закончил играть перед продолжающимся выполнением программы.
+
+
+    Public Function fnPlaySound(sPath As String) As Boolean
+        fnPlaySound = PlaySound(sPath, 0&, SND_ASYNC Or SND_NODEFAULT)
+    End Function
+    Public Sub StopPlaySound()
+        Dim s As String
+        PlaySound(s, 0&, 0)
+    End Sub
     Public Sub Feed()
 
         Dim pntFood As Point
@@ -190,6 +205,7 @@ Public Class frmSnake
     End Sub
 
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        playstartsound = True
         r = True
         Initialize()
         Me.FormBorderStyle = FormBorderStyle.None
@@ -248,6 +264,13 @@ Public Class frmSnake
 
     End Sub
 
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        If playstartsound = True Then
+            My.Computer.Audio.Play("C:\2.wav", AudioPlayMode.Background)
+        End If
+
+    End Sub
+
     Private Sub Form1_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
 
         Select Case e.KeyCode
@@ -255,6 +278,8 @@ Public Class frmSnake
             Case Keys.Enter
 
                 HideMessage()
+                playstartsound = False
+                Timer2.Enabled = False
 
 
             Case Keys.Escape
