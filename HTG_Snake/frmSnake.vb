@@ -125,7 +125,7 @@ Public Class frmSnake
             Feed()
 
             intScore += 5
-
+            My.Computer.Audio.Play("C:\2.wav", AudioPlayMode.Background)
             Text = intScore.ToString
             lblscore.Text = Text
 
@@ -150,6 +150,7 @@ Public Class frmSnake
                 cSnake.Eat(cMovement.Location)
 
                 intAddSeg += 1
+
 
             End If
 
