@@ -2,6 +2,7 @@
 Imports System.Runtime.Serialization.Formatters.Binary
 
 Public Class frmSnake
+
     Public u, d, l, r, playstartsound As Boolean
     <Serializable>
     Structure Score_table
@@ -9,6 +10,7 @@ Public Class frmSnake
         Dim Name As String
         Dim Phone As String
     End Structure
+    Public i As Integer = 239
 
     Private Const intGrow As Integer = 3
     Private Const intWidth As Integer = 15
@@ -73,6 +75,9 @@ Public Class frmSnake
             bf.Serialize(fstream, arr)
         End Using
         tmrGame.Stop()
+        tmrTIME.Stop()
+        i = 239
+
         My.Computer.Audio.Play(Application.StartupPath & "\Sounds\gameover.wav", AudioPlayMode.Background)
     End Sub
 
@@ -267,6 +272,19 @@ Public Class frmSnake
 
     End Sub
 
+    Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles lbltop.Click
+
+    End Sub
+
+    Private Sub tmrTIME_Tick(sender As Object, e As EventArgs) Handles tmrTIME.Tick
+
+        i -= 1
+        lblTimeGame.Text = i.ToString
+        If i = 0 Then
+            Die()
+        End If
+    End Sub
+
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         If playstartsound = True Then
             My.Computer.Audio.Play(Application.StartupPath & "\Sounds\start.wav", AudioPlayMode.Background)
@@ -283,6 +301,7 @@ Public Class frmSnake
                 HideMessage()
                 playstartsound = False
                 Timer2.Enabled = False
+                tmrTIME.Enabled = True
 
 
             Case Keys.Escape

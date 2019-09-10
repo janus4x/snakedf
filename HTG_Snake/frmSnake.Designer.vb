@@ -33,6 +33,12 @@ Partial Class frmSnake
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.lbltop = New System.Windows.Forms.Label()
+        Me.lblTopName = New System.Windows.Forms.Label()
+        Me.lblTopScore = New System.Windows.Forms.Label()
+        Me.lbltimetxt = New System.Windows.Forms.Label()
+        Me.lblTimeGame = New System.Windows.Forms.Label()
+        Me.tmrTIME = New System.Windows.Forms.Timer(Me.components)
         CType(Me.picGame, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.toppanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,12 +74,17 @@ Partial Class frmSnake
         'toppanel
         '
         Me.toppanel.BackColor = System.Drawing.Color.Black
+        Me.toppanel.Controls.Add(Me.lblTimeGame)
+        Me.toppanel.Controls.Add(Me.lbltimetxt)
+        Me.toppanel.Controls.Add(Me.lblTopScore)
+        Me.toppanel.Controls.Add(Me.lblTopName)
+        Me.toppanel.Controls.Add(Me.lbltop)
         Me.toppanel.Controls.Add(Me.lblscoreText)
         Me.toppanel.Controls.Add(Me.lblscore)
         Me.toppanel.ForeColor = System.Drawing.SystemColors.ControlText
         Me.toppanel.Location = New System.Drawing.Point(0, 0)
         Me.toppanel.Name = "toppanel"
-        Me.toppanel.Size = New System.Drawing.Size(591, 46)
+        Me.toppanel.Size = New System.Drawing.Size(768, 46)
         Me.toppanel.TabIndex = 9
         '
         'lblscoreText
@@ -91,9 +102,9 @@ Partial Class frmSnake
         '
         Me.lblscore.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblscore.ForeColor = System.Drawing.Color.White
-        Me.lblscore.Location = New System.Drawing.Point(81, 0)
+        Me.lblscore.Location = New System.Drawing.Point(95, 0)
         Me.lblscore.Name = "lblscore"
-        Me.lblscore.Size = New System.Drawing.Size(66, 41)
+        Me.lblscore.Size = New System.Drawing.Size(91, 41)
         Me.lblscore.TabIndex = 0
         Me.lblscore.Text = "0"
         Me.lblscore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -112,7 +123,7 @@ Partial Class frmSnake
         'Timer1
         '
         Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1100
+        Me.Timer1.Interval = 1000
         '
         'PictureBox2
         '
@@ -129,6 +140,64 @@ Partial Class frmSnake
         '
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 5800
+        '
+        'lbltop
+        '
+        Me.lbltop.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbltop.ForeColor = System.Drawing.Color.White
+        Me.lbltop.Location = New System.Drawing.Point(192, 3)
+        Me.lbltop.Name = "lbltop"
+        Me.lbltop.Size = New System.Drawing.Size(76, 41)
+        Me.lbltop.TabIndex = 12
+        Me.lbltop.Text = "Лидер:"
+        Me.lbltop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblTopName
+        '
+        Me.lblTopName.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTopName.ForeColor = System.Drawing.Color.White
+        Me.lblTopName.Location = New System.Drawing.Point(274, 3)
+        Me.lblTopName.Name = "lblTopName"
+        Me.lblTopName.Size = New System.Drawing.Size(216, 41)
+        Me.lblTopName.TabIndex = 13
+        Me.lblTopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblTopScore
+        '
+        Me.lblTopScore.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTopScore.ForeColor = System.Drawing.Color.White
+        Me.lblTopScore.Location = New System.Drawing.Point(500, 3)
+        Me.lblTopScore.Name = "lblTopScore"
+        Me.lblTopScore.Size = New System.Drawing.Size(91, 41)
+        Me.lblTopScore.TabIndex = 14
+        Me.lblTopScore.Text = "0"
+        Me.lblTopScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltimetxt
+        '
+        Me.lbltimetxt.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbltimetxt.ForeColor = System.Drawing.Color.White
+        Me.lbltimetxt.Location = New System.Drawing.Point(597, 3)
+        Me.lbltimetxt.Name = "lbltimetxt"
+        Me.lbltimetxt.Size = New System.Drawing.Size(76, 41)
+        Me.lbltimetxt.TabIndex = 12
+        Me.lbltimetxt.Text = "Время:"
+        Me.lbltimetxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblTimeGame
+        '
+        Me.lblTimeGame.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTimeGame.ForeColor = System.Drawing.Color.White
+        Me.lblTimeGame.Location = New System.Drawing.Point(679, 3)
+        Me.lblTimeGame.Name = "lblTimeGame"
+        Me.lblTimeGame.Size = New System.Drawing.Size(91, 41)
+        Me.lblTimeGame.TabIndex = 15
+        Me.lblTimeGame.Text = "239"
+        Me.lblTimeGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'tmrTIME
+        '
+        Me.tmrTIME.Interval = 1000
         '
         'frmSnake
         '
@@ -163,4 +232,10 @@ Partial Class frmSnake
     Friend WithEvents Timer1 As Timer
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents lbltop As Label
+    Friend WithEvents lblTopScore As Label
+    Friend WithEvents lblTopName As Label
+    Friend WithEvents lblTimeGame As Label
+    Friend WithEvents lbltimetxt As Label
+    Friend WithEvents tmrTIME As Timer
 End Class
