@@ -73,7 +73,7 @@ Public Class frmSnake
             bf.Serialize(fstream, arr)
         End Using
         tmrGame.Stop()
-
+        My.Computer.Audio.Play(Application.StartupPath & "\Sounds\gameover.wav", AudioPlayMode.Background)
     End Sub
 
 
@@ -125,7 +125,9 @@ Public Class frmSnake
             Feed()
 
             intScore += 5
-            My.Computer.Audio.Play("C:\2.wav", AudioPlayMode.Background)
+
+
+            My.Computer.Audio.Play(Application.StartupPath & "\Sounds\eat.wav", AudioPlayMode.Background)
             Text = intScore.ToString
             lblscore.Text = Text
 
@@ -267,7 +269,7 @@ Public Class frmSnake
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         If playstartsound = True Then
-            My.Computer.Audio.Play("C:\2.wav", AudioPlayMode.Background)
+            My.Computer.Audio.Play(Application.StartupPath & "\Sounds\start.wav", AudioPlayMode.Background)
         End If
 
     End Sub
