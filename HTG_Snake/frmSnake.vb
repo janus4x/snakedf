@@ -58,12 +58,13 @@ Public Class frmSnake
             bf.Serialize(fstream, arr)
         End Using
         tmrGame.Stop()
-
+        end_game()
+        picGame.Visible = False
     End Sub
 
 
     Private Sub Initialize()
-
+        start_game()
         intScore = 0
 
         rectFood = New Rectangle(0, 0, intWidth, intWidth)
@@ -188,12 +189,27 @@ Public Class frmSnake
         lblMessage.Visible = False
 
     End Sub
-
+    Private Sub start_game()
+        gameover.Visible = False
+        name_lbl.Visible = False
+        name_txt.Visible = False
+        submit_btn.Visible = False
+        phone_lbl.Visible = False
+        phone_txt.Visible = False
+    End Sub
+    Private Sub end_game()
+        gameover.Visible = True
+        name_lbl.Visible = True
+        name_txt.Visible = True
+        submit_btn.Visible = True
+        phone_lbl.Visible = True
+        phone_txt.Visible = True
+    End Sub
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         r = True
         Initialize()
         Me.FormBorderStyle = FormBorderStyle.None
-
+        start_game()
 
     End Sub
 
@@ -246,6 +262,15 @@ Public Class frmSnake
             lblMessage.Text = ""
         End If
 
+    End Sub
+
+    Private Sub toppanel_Paint(sender As Object, e As PaintEventArgs) Handles toppanel.Paint
+
+    End Sub
+
+    Private Sub submit_btn_Click(sender As Object, e As EventArgs) Handles submit_btn.Click
+        Initialize()
+        tmrGame.Start()
     End Sub
 
     Private Sub Form1_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
