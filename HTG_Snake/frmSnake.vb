@@ -11,7 +11,8 @@ Public Class frmSnake
         Dim Phone As String
     End Structure
     Public i As Integer = 239
-
+    Public arr(5) As Score_table
+    Public scoremasscounter As Byte = 0
     Private Const intGrow As Integer = 3
     Private Const intWidth As Integer = 15
 
@@ -36,13 +37,7 @@ Public Class frmSnake
     Const SND_SYNC = &H0            ' Синхронное воспроизведение(значение по умолчанию). Ждать, пока звук не закончил играть перед продолжающимся выполнением программы.
 
 
-    Public Function fnPlaySound(sPath As String) As Boolean
-        fnPlaySound = PlaySound(sPath, 0&, SND_ASYNC Or SND_NODEFAULT)
-    End Function
-    Public Sub StopPlaySound()
-        Dim s As String
-        PlaySound(s, 0&, 0)
-    End Sub
+
     Public Sub Feed()
 
         Dim pntFood As Point
@@ -68,13 +63,6 @@ Public Class frmSnake
     End Sub
 
     Private Sub Die()
-        Dim arr(10) As Score_table
-        arr(0).Name = "Max" : arr(0).Score = intScore : arr(0).Phone = "test"
-        Using fstream As FileStream = File.Create("test.dat")
-            Dim bf As New BinaryFormatter
-            bf.Serialize(fstream, arr)
-        End Using
-
         tmrGame.Stop()
         tmrTIME.Stop()
         i = 239
@@ -82,6 +70,8 @@ Public Class frmSnake
         writenickname()
     End Sub
     Private Sub writenickname()
+        Dim allscoretext As String
+
         txtnick.Visible = True
         txtnick.Select()
         lblnick.Visible = True
@@ -89,6 +79,17 @@ Public Class frmSnake
         lblphone.Visible = True
         txtscoretable.Visible = True
         txtpositionscore.Visible = True
+
+        arr(scoremasscounter).Name = "Max" : arr(scoremasscounter).Score = lblscore.Text : arr(scoremasscounter).Phone = "test"
+        allscoretext = arr(scoremasscounter).Name & "   " & Str(arr(scoremasscounter).Score)
+        txtscoretable.Lines(scoremasscounter) = allscoretext
+
+        scoremasscounter += 1
+
+        Using fstream As FileStream = File.Create("test.dat")
+            Dim bf As New BinaryFormatter
+            bf.Serialize(fstream, arr)
+        End Using
 
     End Sub
 
@@ -398,6 +399,10 @@ Public Class frmSnake
                 End If
         End Select
 
+
+    End Sub
+
+    Private Sub lblscore_Click(sender As Object, e As EventArgs) Handles lblscore.Click
 
     End Sub
 
