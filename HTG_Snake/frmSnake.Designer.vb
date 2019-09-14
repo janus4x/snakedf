@@ -25,24 +25,24 @@ Partial Class frmSnake
         Me.components = New System.ComponentModel.Container()
         Me.tmrGame = New System.Windows.Forms.Timer(Me.components)
         Me.lblMessage = New System.Windows.Forms.Label()
-        Me.picGame = New System.Windows.Forms.PictureBox()
         Me.toppanel = New System.Windows.Forms.Panel()
+        Me.lblTimeGame = New System.Windows.Forms.Label()
+        Me.lbltimetxt = New System.Windows.Forms.Label()
+        Me.lblTopScore = New System.Windows.Forms.Label()
+        Me.lblTopName = New System.Windows.Forms.Label()
+        Me.lbltop = New System.Windows.Forms.Label()
         Me.lblscoreText = New System.Windows.Forms.Label()
         Me.lblscore = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.lbltop = New System.Windows.Forms.Label()
-        Me.lblTopName = New System.Windows.Forms.Label()
-        Me.lblTopScore = New System.Windows.Forms.Label()
-        Me.lbltimetxt = New System.Windows.Forms.Label()
-        Me.lblTimeGame = New System.Windows.Forms.Label()
         Me.tmrTIME = New System.Windows.Forms.Timer(Me.components)
-        CType(Me.picGame, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.picGame = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.toppanel.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picGame, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tmrGame
@@ -62,15 +62,6 @@ Partial Class frmSnake
         Me.lblMessage.Text = "Нажми Enter для страта"
         Me.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'picGame
-        '
-        Me.picGame.BackColor = System.Drawing.Color.Black
-        Me.picGame.Location = New System.Drawing.Point(0, 326)
-        Me.picGame.Name = "picGame"
-        Me.picGame.Size = New System.Drawing.Size(768, 808)
-        Me.picGame.TabIndex = 7
-        Me.picGame.TabStop = False
-        '
         'toppanel
         '
         Me.toppanel.BackColor = System.Drawing.Color.Black
@@ -87,9 +78,63 @@ Partial Class frmSnake
         Me.toppanel.Size = New System.Drawing.Size(768, 46)
         Me.toppanel.TabIndex = 9
         '
+        'lblTimeGame
+        '
+        Me.lblTimeGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTimeGame.ForeColor = System.Drawing.Color.White
+        Me.lblTimeGame.Location = New System.Drawing.Point(679, 3)
+        Me.lblTimeGame.Name = "lblTimeGame"
+        Me.lblTimeGame.Size = New System.Drawing.Size(91, 41)
+        Me.lblTimeGame.TabIndex = 15
+        Me.lblTimeGame.Text = "239"
+        Me.lblTimeGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltimetxt
+        '
+        Me.lbltimetxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbltimetxt.ForeColor = System.Drawing.Color.White
+        Me.lbltimetxt.Location = New System.Drawing.Point(597, 3)
+        Me.lbltimetxt.Name = "lbltimetxt"
+        Me.lbltimetxt.Size = New System.Drawing.Size(76, 41)
+        Me.lbltimetxt.TabIndex = 12
+        Me.lbltimetxt.Text = "Время:"
+        Me.lbltimetxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblTopScore
+        '
+        Me.lblTopScore.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTopScore.ForeColor = System.Drawing.Color.White
+        Me.lblTopScore.Location = New System.Drawing.Point(500, 3)
+        Me.lblTopScore.Name = "lblTopScore"
+        Me.lblTopScore.Size = New System.Drawing.Size(91, 41)
+        Me.lblTopScore.TabIndex = 14
+        Me.lblTopScore.Text = "0"
+        Me.lblTopScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblTopName
+        '
+        Me.lblTopName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTopName.ForeColor = System.Drawing.Color.White
+        Me.lblTopName.Location = New System.Drawing.Point(274, 3)
+        Me.lblTopName.Name = "lblTopName"
+        Me.lblTopName.Size = New System.Drawing.Size(216, 41)
+        Me.lblTopName.TabIndex = 13
+        Me.lblTopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbltop
+        '
+        Me.lbltop.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbltop.ForeColor = System.Drawing.Color.White
+        Me.lbltop.Location = New System.Drawing.Point(192, 3)
+        Me.lbltop.Name = "lbltop"
+        Me.lbltop.Size = New System.Drawing.Size(76, 41)
+        Me.lbltop.TabIndex = 12
+        Me.lbltop.Text = "Лидер:"
+        Me.lbltop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'lblscoreText
         '
-        Me.lblscoreText.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblscoreText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblscoreText.ForeColor = System.Drawing.Color.White
         Me.lblscoreText.Location = New System.Drawing.Point(13, 3)
         Me.lblscoreText.Name = "lblscoreText"
@@ -100,7 +145,7 @@ Partial Class frmSnake
         '
         'lblscore
         '
-        Me.lblscore.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblscore.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblscore.ForeColor = System.Drawing.Color.White
         Me.lblscore.Location = New System.Drawing.Point(95, 0)
         Me.lblscore.Name = "lblscore"
@@ -109,21 +154,28 @@ Partial Class frmSnake
         Me.lblscore.Text = "0"
         Me.lblscore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.BackgroundImage = Global.HTG_Snake.My.Resources.Resources.змейка
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(306, 511)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(153, 247)
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
-        '
         'Timer1
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 5800
+        '
+        'tmrTIME
+        '
+        Me.tmrTIME.Interval = 1000
+        '
+        'picGame
+        '
+        Me.picGame.BackColor = System.Drawing.Color.Black
+        Me.picGame.Location = New System.Drawing.Point(0, 326)
+        Me.picGame.Name = "picGame"
+        Me.picGame.Size = New System.Drawing.Size(768, 808)
+        Me.picGame.TabIndex = 7
+        Me.picGame.TabStop = False
         '
         'PictureBox2
         '
@@ -136,68 +188,16 @@ Partial Class frmSnake
         Me.PictureBox2.TabIndex = 11
         Me.PictureBox2.TabStop = False
         '
-        'Timer2
+        'PictureBox1
         '
-        Me.Timer2.Enabled = True
-        Me.Timer2.Interval = 5800
-        '
-        'lbltop
-        '
-        Me.lbltop.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lbltop.ForeColor = System.Drawing.Color.White
-        Me.lbltop.Location = New System.Drawing.Point(192, 3)
-        Me.lbltop.Name = "lbltop"
-        Me.lbltop.Size = New System.Drawing.Size(76, 41)
-        Me.lbltop.TabIndex = 12
-        Me.lbltop.Text = "Лидер:"
-        Me.lbltop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblTopName
-        '
-        Me.lblTopName.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblTopName.ForeColor = System.Drawing.Color.White
-        Me.lblTopName.Location = New System.Drawing.Point(274, 3)
-        Me.lblTopName.Name = "lblTopName"
-        Me.lblTopName.Size = New System.Drawing.Size(216, 41)
-        Me.lblTopName.TabIndex = 13
-        Me.lblTopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblTopScore
-        '
-        Me.lblTopScore.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblTopScore.ForeColor = System.Drawing.Color.White
-        Me.lblTopScore.Location = New System.Drawing.Point(500, 3)
-        Me.lblTopScore.Name = "lblTopScore"
-        Me.lblTopScore.Size = New System.Drawing.Size(91, 41)
-        Me.lblTopScore.TabIndex = 14
-        Me.lblTopScore.Text = "0"
-        Me.lblTopScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lbltimetxt
-        '
-        Me.lbltimetxt.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lbltimetxt.ForeColor = System.Drawing.Color.White
-        Me.lbltimetxt.Location = New System.Drawing.Point(597, 3)
-        Me.lbltimetxt.Name = "lbltimetxt"
-        Me.lbltimetxt.Size = New System.Drawing.Size(76, 41)
-        Me.lbltimetxt.TabIndex = 12
-        Me.lbltimetxt.Text = "Время:"
-        Me.lbltimetxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblTimeGame
-        '
-        Me.lblTimeGame.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblTimeGame.ForeColor = System.Drawing.Color.White
-        Me.lblTimeGame.Location = New System.Drawing.Point(679, 3)
-        Me.lblTimeGame.Name = "lblTimeGame"
-        Me.lblTimeGame.Size = New System.Drawing.Size(91, 41)
-        Me.lblTimeGame.TabIndex = 15
-        Me.lblTimeGame.Text = "239"
-        Me.lblTimeGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'tmrTIME
-        '
-        Me.tmrTIME.Interval = 1000
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.BackgroundImage = Global.HTG_Snake.My.Resources.Resources.змейка
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(306, 511)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(153, 247)
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
         '
         'frmSnake
         '
@@ -215,22 +215,19 @@ Partial Class frmSnake
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmSnake"
         Me.Text = "HTG_Snake"
-        CType(Me.picGame, System.ComponentModel.ISupportInitialize).EndInit()
         Me.toppanel.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picGame, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents tmrGame As System.Windows.Forms.Timer
     Friend WithEvents lblMessage As System.Windows.Forms.Label
-    Friend WithEvents picGame As System.Windows.Forms.PictureBox
     Friend WithEvents toppanel As Panel
     Friend WithEvents lblscoreText As Label
     Friend WithEvents lblscore As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Timer2 As Timer
     Friend WithEvents lbltop As Label
     Friend WithEvents lblTopScore As Label
@@ -238,4 +235,7 @@ Partial Class frmSnake
     Friend WithEvents lblTimeGame As Label
     Friend WithEvents lbltimetxt As Label
     Friend WithEvents tmrTIME As Timer
+    Friend WithEvents picGame As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
