@@ -11,8 +11,8 @@ Public Class frmSnake
         Dim Phone As String
     End Structure
     Public i As Integer = 239
-    Public arr(5) As Score_table
-    Public scoremasscounter As Byte = 0
+    Public arr(5) As Score_table 'массив хранения строк с введенными данными
+    Public scoremasscounter As Byte = 0 'счетчик для массива введенных ников/телефонов
     Private Const intGrow As Integer = 3
     Private Const intWidth As Integer = 15
 
@@ -25,17 +25,6 @@ Public Class frmSnake
     Private rectFood As Rectangle
 
     Private intScore As Integer
-    Private Declare Function PlaySound Lib "winmm.dll" Alias "PlaySoundA" (ByVal lpszName As String, ByVal hModule As Long, ByVal dwFlags As Long) As Long
-
-    Const SND_ALIAS = &H10000       ' Воспроизведение звуков Windows,определенных в WIN.INI или в реестре (напр. SystemStart, Asterisk, и т.д.).
-    Const SND_ASYNC = &H1           ' Асинхронное воспроизведение.
-    Const SND_FILENAME = &H20000    ' Запуск указанного файла.
-    Const SND_LOOP = &H8            ' Циклическое воспроизведение до следующего вызова sndPlaySound lpszSoundName = "". Можно также использовать SND_ASYNC.
-    Const SND_NODEFAULT = &H2       ' Не запускать звук по умолчанию Windows, если указанный звук не может быть найден.
-    Const SND_NOSTOP = &H10         ' Не прекращать воспроизведение любого запущенного звука.
-    Const SND_NOWAIT = &H2000       ' Не ждать,если драйвер занят.
-    Const SND_SYNC = &H0            ' Синхронное воспроизведение(значение по умолчанию). Ждать, пока звук не закончил играть перед продолжающимся выполнением программы.
-
 
 
     Public Sub Feed()
@@ -67,10 +56,10 @@ Public Class frmSnake
         tmrTIME.Stop()
         i = 239
         My.Computer.Audio.Play(Application.StartupPath & "\Sounds\gameover.wav", AudioPlayMode.Background)
-        writenickname()
+        writenickname() 'процедура записи никнейма и телефона
     End Sub
     Private Sub writenickname()
-        Dim allscoretext As String
+
 
         txtnick.Visible = True
         txtnick.Select()
@@ -80,16 +69,46 @@ Public Class frmSnake
         txtscoretable.Visible = True
         txtpositionscore.Visible = True
 
-        arr(scoremasscounter).Name = "Max" : arr(scoremasscounter).Score = lblscore.Text : arr(scoremasscounter).Phone = "test"
-        allscoretext = arr(scoremasscounter).Name & "   " & Str(arr(scoremasscounter).Score)
-        txtscoretable.Lines(scoremasscounter) = allscoretext
+
+
+    End Sub
+    Private Sub txtnick_KeyDown(sender As Object, e As KeyEventArgs) Handles txtnick.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtphone.Select()
+
+        End If
+    End Sub
+
+    Private Sub txtphone_KeyDown(sender As Object, e As KeyEventArgs) Handles txtphone.KeyDown
+        '-----------------------------------------------------------------------------------------------------------------------------------
+        'сделать проверку валидности ввода данных, только цифры
+        '-----------------------------------------------------------------------------------------------------------------------------------
+        If e.KeyCode = Keys.Enter Then
+            Writescoretable() 'сортировка и вывод таблицы результатов после ввода телефона
+
+        End If
+    End Sub
+    Private Sub Writescoretable()
+        Dim allscoretext(1) As String
+        arr(scoremasscounter).Name = txtnick.Text
+        arr(scoremasscounter).Score = lblscore.Text
+        arr(scoremasscounter).Phone = txtphone.Text
+        '----------------------------------------------------------------------------------------------------------------------------------
+        'нужно сделать сортировку массива arr(scoremasscounter).Score и выводить из него только 3 верхних максимальных значений
+        '----------------------------------------------------------------------------------------------------------------------------------
+
+        allscoretext(scoremasscounter) = arr(scoremasscounter).Name & "   " & Str(arr(scoremasscounter).Score)
+        txtscoretable.Text = Join(allscoretext) 'запись в текстбокс строки с введенными данными
 
         scoremasscounter += 1
-
+        '===================================================================================================================================
+        'в файл пишем все введенные пользователями строки
+        '===================================================================================================================================
         Using fstream As FileStream = File.Create("test.dat")
             Dim bf As New BinaryFormatter
             bf.Serialize(fstream, arr)
         End Using
+
 
     End Sub
 
@@ -410,21 +429,5 @@ Public Class frmSnake
 
     End Sub
 
-    Private Sub txtnick_KeyDown(sender As Object, e As KeyEventArgs) Handles txtnick.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtphone.Select()
 
-        End If
-    End Sub
-
-    Private Sub txtphone_KeyDown(sender As Object, e As KeyEventArgs) Handles txtphone.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Writescoretable()
-
-        End If
-    End Sub
-    Private Sub Writescoretable()
-        txtscoretable.Text = txtscoretable.Text + vbCrLf + txtnick.Text
-
-    End Sub
 End Class

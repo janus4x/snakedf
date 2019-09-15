@@ -172,9 +172,9 @@ Partial Class frmSnake
         Me.PictureBox1.BackColor = System.Drawing.Color.Black
         Me.PictureBox1.BackgroundImage = Global.HTG_Snake.My.Resources.Resources.змейка
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(306, 511)
+        Me.PictureBox1.Location = New System.Drawing.Point(263, 372)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(153, 247)
+        Me.PictureBox1.Size = New System.Drawing.Size(245, 402)
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
         '
@@ -194,8 +194,10 @@ Partial Class frmSnake
         '
         'txtnick
         '
+        Me.txtnick.BackColor = System.Drawing.Color.Black
         Me.txtnick.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtnick.Font = New System.Drawing.Font("a_OldTyper", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txtnick.ForeColor = System.Drawing.Color.DarkOrange
         Me.txtnick.Location = New System.Drawing.Point(231, 823)
         Me.txtnick.MaxLength = 15
         Me.txtnick.Name = "txtnick"
@@ -219,8 +221,10 @@ Partial Class frmSnake
         '
         'txtphone
         '
+        Me.txtphone.BackColor = System.Drawing.Color.Black
         Me.txtphone.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtphone.Font = New System.Drawing.Font("a_OldTyper", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txtphone.ForeColor = System.Drawing.Color.DarkOrange
         Me.txtphone.Location = New System.Drawing.Point(231, 878)
         Me.txtphone.MaxLength = 15
         Me.txtphone.Name = "txtphone"
@@ -253,7 +257,6 @@ Partial Class frmSnake
         Me.txtscoretable.Name = "txtscoretable"
         Me.txtscoretable.Size = New System.Drawing.Size(600, 600)
         Me.txtscoretable.TabIndex = 15
-        Me.txtscoretable.Text = "Таблица лидеров -----------------------------------"
         Me.txtscoretable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtscoretable.Visible = False
         '
