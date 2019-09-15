@@ -74,13 +74,23 @@ Public Class frmSnake
             Dim bf As New BinaryFormatter
             bf.Serialize(fstream, arr)
         End Using
+
         tmrGame.Stop()
         tmrTIME.Stop()
         i = 239
-
         My.Computer.Audio.Play(Application.StartupPath & "\Sounds\gameover.wav", AudioPlayMode.Background)
+        writenickname()
     End Sub
+    Private Sub writenickname()
+        txtnick.Visible = True
+        txtnick.Select()
+        lblnick.Visible = True
+        txtphone.Visible = True
+        lblphone.Visible = True
+        txtscoretable.Visible = True
+        txtpositionscore.Visible = True
 
+    End Sub
 
     Private Sub Initialize()
 
@@ -207,7 +217,7 @@ Public Class frmSnake
         tmrGame.Enabled = True
         Timer1.Enabled = False
         PictureBox1.Visible = False
-        PictureBox2.Visible = False
+        ' PictureBox2.Visible = False
         lblMessage.Visible = False
 
     End Sub
@@ -285,10 +295,30 @@ Public Class frmSnake
         End If
     End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label1_Click_2(sender As Object, e As EventArgs) Handles lblphone.Click
+
+    End Sub
+
+    Private Sub txtscoretable_TextChanged(sender As Object, e As EventArgs) Handles txtscoretable.TextChanged
+
+    End Sub
+
+    Private Sub txtnick_TextChanged(sender As Object, e As EventArgs) Handles txtnick.TextChanged
+
+    End Sub
+
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         If playstartsound = True Then
             My.Computer.Audio.Play(Application.StartupPath & "\Sounds\start.wav", AudioPlayMode.Background)
         End If
+
+    End Sub
+
+    Private Sub txtphone_TextChanged(sender As Object, e As EventArgs) Handles txtphone.TextChanged
 
     End Sub
 
@@ -372,6 +402,24 @@ Public Class frmSnake
     End Sub
 
     Private Sub PicGame_Click(sender As Object, e As EventArgs) Handles picGame.Click
+
+    End Sub
+
+    Private Sub txtnick_KeyDown(sender As Object, e As KeyEventArgs) Handles txtnick.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtphone.Select()
+
+        End If
+    End Sub
+
+    Private Sub txtphone_KeyDown(sender As Object, e As KeyEventArgs) Handles txtphone.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Writescoretable()
+
+        End If
+    End Sub
+    Private Sub Writescoretable()
+        txtscoretable.Text = txtscoretable.Text + vbCrLf + txtnick.Text
 
     End Sub
 End Class
