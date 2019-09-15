@@ -40,10 +40,10 @@ Partial Class frmSnake
         Me.tmrTIME = New System.Windows.Forms.Timer(Me.components)
         Me.txtnick = New System.Windows.Forms.TextBox()
         Me.lblnick = New System.Windows.Forms.Label()
-        Me.txtphone = New System.Windows.Forms.TextBox()
         Me.lblphone = New System.Windows.Forms.Label()
         Me.txtscoretable = New System.Windows.Forms.TextBox()
         Me.txtpositionscore = New System.Windows.Forms.TextBox()
+        Me.txtphone = New System.Windows.Forms.MaskedTextBox()
         CType(Me.picGame, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.toppanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +93,7 @@ Partial Class frmSnake
         '
         'lblTimeGame
         '
-        Me.lblTimeGame.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTimeGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblTimeGame.ForeColor = System.Drawing.Color.White
         Me.lblTimeGame.Location = New System.Drawing.Point(679, 3)
         Me.lblTimeGame.Name = "lblTimeGame"
@@ -104,7 +104,7 @@ Partial Class frmSnake
         '
         'lbltimetxt
         '
-        Me.lbltimetxt.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbltimetxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lbltimetxt.ForeColor = System.Drawing.Color.White
         Me.lbltimetxt.Location = New System.Drawing.Point(597, 3)
         Me.lbltimetxt.Name = "lbltimetxt"
@@ -115,7 +115,7 @@ Partial Class frmSnake
         '
         'lblTopScore
         '
-        Me.lblTopScore.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTopScore.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblTopScore.ForeColor = System.Drawing.Color.White
         Me.lblTopScore.Location = New System.Drawing.Point(500, 3)
         Me.lblTopScore.Name = "lblTopScore"
@@ -126,7 +126,7 @@ Partial Class frmSnake
         '
         'lblTopName
         '
-        Me.lblTopName.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblTopName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblTopName.ForeColor = System.Drawing.Color.White
         Me.lblTopName.Location = New System.Drawing.Point(302, 3)
         Me.lblTopName.Name = "lblTopName"
@@ -136,7 +136,7 @@ Partial Class frmSnake
         '
         'lbltop
         '
-        Me.lbltop.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbltop.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lbltop.ForeColor = System.Drawing.Color.White
         Me.lbltop.Location = New System.Drawing.Point(227, 3)
         Me.lbltop.Name = "lbltop"
@@ -147,7 +147,7 @@ Partial Class frmSnake
         '
         'lblscoreText
         '
-        Me.lblscoreText.Font = New System.Drawing.Font("a_BosaNova", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblscoreText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblscoreText.ForeColor = System.Drawing.Color.White
         Me.lblscoreText.Location = New System.Drawing.Point(13, 3)
         Me.lblscoreText.Name = "lblscoreText"
@@ -158,7 +158,7 @@ Partial Class frmSnake
         '
         'lblscore
         '
-        Me.lblscore.Font = New System.Drawing.Font("a_BosaNova", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lblscore.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblscore.ForeColor = System.Drawing.Color.White
         Me.lblscore.Location = New System.Drawing.Point(114, 3)
         Me.lblscore.Name = "lblscore"
@@ -196,12 +196,12 @@ Partial Class frmSnake
         '
         Me.txtnick.BackColor = System.Drawing.Color.Black
         Me.txtnick.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtnick.Font = New System.Drawing.Font("a_OldTyper", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txtnick.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtnick.ForeColor = System.Drawing.Color.DarkOrange
         Me.txtnick.Location = New System.Drawing.Point(231, 823)
         Me.txtnick.MaxLength = 15
         Me.txtnick.Name = "txtnick"
-        Me.txtnick.Size = New System.Drawing.Size(294, 24)
+        Me.txtnick.Size = New System.Drawing.Size(294, 22)
         Me.txtnick.TabIndex = 11
         Me.txtnick.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtnick.Visible = False
@@ -218,20 +218,6 @@ Partial Class frmSnake
         Me.lblnick.Text = "Введите ваш никнейм"
         Me.lblnick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblnick.Visible = False
-        '
-        'txtphone
-        '
-        Me.txtphone.BackColor = System.Drawing.Color.Black
-        Me.txtphone.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtphone.Font = New System.Drawing.Font("a_OldTyper", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txtphone.ForeColor = System.Drawing.Color.DarkOrange
-        Me.txtphone.Location = New System.Drawing.Point(231, 878)
-        Me.txtphone.MaxLength = 15
-        Me.txtphone.Name = "txtphone"
-        Me.txtphone.Size = New System.Drawing.Size(294, 24)
-        Me.txtphone.TabIndex = 13
-        Me.txtphone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtphone.Visible = False
         '
         'lblphone
         '
@@ -250,7 +236,8 @@ Partial Class frmSnake
         '
         Me.txtscoretable.BackColor = System.Drawing.Color.Black
         Me.txtscoretable.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtscoretable.Font = New System.Drawing.Font("Quake Cyr", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txtscoretable.Enabled = False
+        Me.txtscoretable.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtscoretable.ForeColor = System.Drawing.Color.Orange
         Me.txtscoretable.Location = New System.Drawing.Point(86, 330)
         Me.txtscoretable.Multiline = True
@@ -264,16 +251,30 @@ Partial Class frmSnake
         '
         Me.txtpositionscore.BackColor = System.Drawing.Color.Black
         Me.txtpositionscore.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtpositionscore.Font = New System.Drawing.Font("Quake Cyr", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txtpositionscore.Enabled = False
+        Me.txtpositionscore.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtpositionscore.ForeColor = System.Drawing.Color.Orange
         Me.txtpositionscore.Location = New System.Drawing.Point(156, 422)
         Me.txtpositionscore.Multiline = True
         Me.txtpositionscore.Name = "txtpositionscore"
+        Me.txtpositionscore.ReadOnly = True
         Me.txtpositionscore.Size = New System.Drawing.Size(36, 352)
         Me.txtpositionscore.TabIndex = 16
         Me.txtpositionscore.Text = "1. 2. 3. 4. 5."
         Me.txtpositionscore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtpositionscore.Visible = False
+        '
+        'txtphone
+        '
+        Me.txtphone.BackColor = System.Drawing.SystemColors.MenuText
+        Me.txtphone.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtphone.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txtphone.ForeColor = System.Drawing.Color.DarkOrange
+        Me.txtphone.Location = New System.Drawing.Point(277, 877)
+        Me.txtphone.Name = "txtphone"
+        Me.txtphone.Size = New System.Drawing.Size(206, 22)
+        Me.txtphone.TabIndex = 17
+        Me.txtphone.Visible = False
         '
         'frmSnake
         '
@@ -283,9 +284,9 @@ Partial Class frmSnake
         Me.BackgroundImage = Global.HTG_Snake.My.Resources.Resources.фон
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(768, 1080)
+        Me.Controls.Add(Me.txtphone)
         Me.Controls.Add(Me.txtpositionscore)
         Me.Controls.Add(Me.lblphone)
-        Me.Controls.Add(Me.txtphone)
         Me.Controls.Add(Me.lblnick)
         Me.Controls.Add(Me.txtnick)
         Me.Controls.Add(Me.lblMessage)
@@ -320,8 +321,8 @@ Partial Class frmSnake
     Friend WithEvents tmrTIME As Timer
     Friend WithEvents txtnick As TextBox
     Friend WithEvents lblnick As Label
-    Friend WithEvents txtphone As TextBox
     Friend WithEvents lblphone As Label
     Friend WithEvents txtscoretable As TextBox
     Friend WithEvents txtpositionscore As TextBox
+    Friend WithEvents txtphone As MaskedTextBox
 End Class

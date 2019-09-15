@@ -79,7 +79,8 @@ Public Class frmSnake
         End If
     End Sub
 
-    Private Sub txtphone_KeyDown(sender As Object, e As KeyEventArgs) Handles txtphone.KeyDown
+    Private Sub txtphone_KeyDown(sender As Object, e As KeyEventArgs)
+
         '-----------------------------------------------------------------------------------------------------------------------------------
         'сделать проверку валидности ввода данных, только цифры
         '-----------------------------------------------------------------------------------------------------------------------------------
@@ -243,6 +244,7 @@ Public Class frmSnake
     End Sub
 
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        txtphone.Mask = "###########"
         playstartsound = True
         r = True
         Initialize()
@@ -338,7 +340,7 @@ Public Class frmSnake
 
     End Sub
 
-    Private Sub txtphone_TextChanged(sender As Object, e As EventArgs) Handles txtphone.TextChanged
+    Private Sub txtphone_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
