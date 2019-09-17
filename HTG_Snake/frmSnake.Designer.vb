@@ -69,7 +69,7 @@ Partial Class frmSnake
         'picGame
         '
         Me.picGame.BackColor = System.Drawing.Color.Black
-        Me.picGame.Location = New System.Drawing.Point(-12, 326)
+        Me.picGame.Location = New System.Drawing.Point(0, 330)
         Me.picGame.Name = "picGame"
         Me.picGame.Size = New System.Drawing.Size(768, 808)
         Me.picGame.TabIndex = 7
@@ -196,7 +196,7 @@ Partial Class frmSnake
         '
         Me.txtnick.BackColor = System.Drawing.Color.Black
         Me.txtnick.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtnick.Font = New System.Drawing.Font("a_OldTyper", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txtnick.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtnick.ForeColor = System.Drawing.Color.DarkOrange
         Me.txtnick.Location = New System.Drawing.Point(231, 823)
         Me.txtnick.MaxLength = 15
@@ -218,20 +218,6 @@ Partial Class frmSnake
         Me.lblnick.Text = "Введите ваш никнейм"
         Me.lblnick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblnick.Visible = False
-        '
-        'txtphone
-        '
-        Me.txtphone.BackColor = System.Drawing.Color.Black
-        Me.txtphone.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtphone.Font = New System.Drawing.Font("a_OldTyper", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txtphone.ForeColor = System.Drawing.Color.DarkOrange
-        Me.txtphone.Location = New System.Drawing.Point(231, 878)
-        Me.txtphone.MaxLength = 15
-        Me.txtphone.Name = "txtphone"
-        Me.txtphone.Size = New System.Drawing.Size(294, 24)
-        Me.txtphone.TabIndex = 13
-        Me.txtphone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtphone.Visible = False
         '
         'lblphone
         '
@@ -288,6 +274,7 @@ Partial Class frmSnake
         Me.txtphone.Name = "txtphone"
         Me.txtphone.Size = New System.Drawing.Size(206, 22)
         Me.txtphone.TabIndex = 17
+        Me.txtphone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtphone.Visible = False
         '
         'frmSnake

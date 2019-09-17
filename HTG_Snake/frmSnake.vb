@@ -26,9 +26,18 @@ Public Class frmSnake
 
     Private intScore As Integer
 
+    Public Sub SpeedUP()
+        If tmrGame.Interval > 25 Then
+            tmrGame.Interval = tmrGame.Interval - 5
+        End If
+    End Sub
+    Public Sub SpeedDOWN()
+        If tmrGame.Interval < 80 Then
+            tmrGame.Interval = tmrGame.Interval + 5
+        End If
+    End Sub
 
     Public Sub Feed()
-
         Dim pntFood As Point
 
         Do
@@ -418,7 +427,12 @@ Public Class frmSnake
                     l = False
                 End If
         End Select
-
+        If e.KeyValue = 107 Then
+            SpeedUP()
+        End If
+        If e.KeyValue = 109 Then
+            SpeedDOWN()
+        End If
 
     End Sub
 
