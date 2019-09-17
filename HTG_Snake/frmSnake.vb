@@ -79,8 +79,7 @@ Public Class frmSnake
         End If
     End Sub
 
-    Private Sub txtphone_KeyDown(sender As Object, e As KeyEventArgs)
-
+    Private Sub txtphone_KeyDown(sender As Object, e As KeyEventArgs) Handles txtphone.KeyDown
         '-----------------------------------------------------------------------------------------------------------------------------------
         'сделать проверку валидности ввода данных, только цифры
         '-----------------------------------------------------------------------------------------------------------------------------------
