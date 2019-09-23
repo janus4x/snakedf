@@ -254,13 +254,12 @@ Partial Class frmSnake
         Me.txtpositionscore.Enabled = False
         Me.txtpositionscore.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtpositionscore.ForeColor = System.Drawing.Color.Orange
-        Me.txtpositionscore.Location = New System.Drawing.Point(156, 422)
+        Me.txtpositionscore.Location = New System.Drawing.Point(110, 411)
         Me.txtpositionscore.Multiline = True
         Me.txtpositionscore.Name = "txtpositionscore"
         Me.txtpositionscore.ReadOnly = True
-        Me.txtpositionscore.Size = New System.Drawing.Size(36, 352)
+        Me.txtpositionscore.Size = New System.Drawing.Size(552, 352)
         Me.txtpositionscore.TabIndex = 16
-        Me.txtpositionscore.Text = "1. 2. 3. 4. 5."
         Me.txtpositionscore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtpositionscore.Visible = False
         '

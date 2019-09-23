@@ -111,17 +111,79 @@ Public Class frmSnake
         'нужно сделать сортировку массива arr(scoremasscounter).Score и выводить из него только 3 верхних максимальных значений
         '----------------------------------------------------------------------------------------------------------------------------------
         Dim x As Integer = 0
-        For x = 0 To x = 5 Step 1
+        For x = 0 To 4
             If arr2(x).Score < player_result(0).Score Then
-                Using fstream As FileStream = File.Create("test.dat")
-                    Dim bf As New BinaryFormatter
-                    bf.Serialize(fstream, player_result)
-                End Using
+                If x = 4 Then
+                    arr2(5) = arr2(4)
+                    arr2(x).Name = txtnick.Text
+                    arr2(x).Score = lblscore.Text
+                    arr2(x).Phone = txtphone.Text
+                    Using fstream As FileStream = File.Create("test.dat")
+                        Dim bf As New BinaryFormatter
+                        bf.Serialize(fstream, arr2)
+                    End Using
+                    x = 5
+                End If
+                If x = 3 Then
+                    arr2(5) = arr2(4)
+                    arr2(4) = arr2(3)
+                    arr2(x).Name = txtnick.Text
+                    arr2(x).Score = lblscore.Text
+                    arr2(x).Phone = txtphone.Text
+                    Using fstream As FileStream = File.Create("test.dat")
+                        Dim bf As New BinaryFormatter
+                        bf.Serialize(fstream, arr2)
+                    End Using
+                    x = 5
+                End If
+                If x = 2 Then
+                    arr2(5) = arr2(4)
+                    arr2(4) = arr2(3)
+                    arr2(3) = arr2(2)
+                    arr2(x).Name = txtnick.Text
+                    arr2(x).Score = lblscore.Text
+                    arr2(x).Phone = txtphone.Text
+                    Using fstream As FileStream = File.Create("test.dat")
+                        Dim bf As New BinaryFormatter
+                        bf.Serialize(fstream, arr2)
+                    End Using
+                    x = 5
+                End If
+                If x = 1 Then
+                    arr2(5) = arr2(4)
+                    arr2(4) = arr2(3)
+                    arr2(3) = arr2(2)
+                    arr2(2) = arr2(1)
+                    arr2(x).Name = txtnick.Text
+                    arr2(x).Score = lblscore.Text
+                    arr2(x).Phone = txtphone.Text
+                    Using fstream As FileStream = File.Create("test.dat")
+                        Dim bf As New BinaryFormatter
+                        bf.Serialize(fstream, arr2)
+                    End Using
+                    x = 5
+                End If
+                If x = 0 Then
+                    arr2(5) = arr2(4)
+                    arr2(4) = arr2(3)
+                    arr2(3) = arr2(2)
+                    arr2(2) = arr2(1)
+                    arr2(1) = arr2(0)
+                    arr2(0).Name = txtnick.Text
+                    arr2(0).Score = lblscore.Text
+                    arr2(0).Phone = txtphone.Text
+                    x = 5
+                    Using fstream As FileStream = File.Create("test.dat")
+                        Dim bf As New BinaryFormatter
+                        bf.Serialize(fstream, arr2)
+                    End Using
+                End If
             End If
         Next
         '===================================================================================================================================
         'в файл пишем все введенные пользователями строки
         '===================================================================================================================================
+
     End Sub
 
     Private Sub Initialize()
@@ -259,12 +321,17 @@ Public Class frmSnake
         playstartsound = True
         r = True
         Initialize()
+        Dim player_result(5) As Score_table
+        Dim x As Integer = 0
         Dim arr2 As Score_table()
         Using fstream As FileStream = File.OpenRead("test.dat")
             Dim bf As New BinaryFormatter
             arr2 = bf.Deserialize(fstream)
         End Using
         lblTopName.Text = arr2(0).Name + "=>" + arr2(0).Score.ToString()
+        For x = 0 To 4
+            txtpositionscore.Text = txtpositionscore.Text + arr2(x).Name + " " + arr2(x).Score.ToString() + vbNewLine
+        Next x
     End Sub
 
     Private Sub picGame_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles picGame.Paint
